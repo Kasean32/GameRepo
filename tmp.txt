@@ -1,0 +1,43 @@
+                              List of relations
+ Schema |       Name        |   Type   |   Owner   |    Size    | Description 
+--------+-------------------+----------+-----------+------------+-------------
+ public | alltables         | view     | gradebook | 0 bytes    | 
+ public | classes           | table    | gradebook | 56 kB      | 
+ public | grades            | table    | gradebook | 2744 kB    | 
+ public | homework          | table    | gradebook | 0 bytes    | 
+ public | instructors       | table    | gradebook | 8192 bytes | 
+ public | majors            | table    | gradebook | 8192 bytes | 
+ public | policy            | table    | gradebook | 48 kB      | 
+ public | seqclassid        | sequence | gradebook | 8192 bytes | 
+ public | students          | table    | gradebook | 264 kB     | 
+ public | vactivestudents   | view     | gradebook | 0 bytes    | 
+ public | vallgrades        | view     | gradebook | 0 bytes    | 
+ public | vclasses          | view     | gradebook | 0 bytes    | 
+ public | vclassreport      | view     | gradebook | 0 bytes    | 
+ public | vclasstrack       | view     | gradebook | 0 bytes    | 
+ public | vgrades           | view     | gradebook | 0 bytes    | 
+ public | vgrades_log       | table    | gradebook | 0 bytes    | 
+ public | vinactivestudents | view     | gradebook | 0 bytes    | 
+ public | vmajors           | view     | gradebook | 0 bytes    | 
+ public | vstudents         | view     | gradebook | 0 bytes    | 
+ public | vtable_fk         | view     | gradebook | 0 bytes    | 
+ public | vtable_in_order   | view     | gradebook | 0 bytes    | 
+ public | vyears            | view     | gradebook | 0 bytes    | 
+(22 rows)
+
+                                          Table "public.students"
+   Column   |         Type          |           Modifiers           | Storage  | Stats target | Description 
+------------+-----------------------+-------------------------------+----------+--------------+-------------
+ sid        | integer               | not null                      | plain    |              | 
+ lastname   | character varying(20) | not null                      | extended |              | 
+ firstname  | character varying(25) | not null                      | extended |              | 
+ active     | character(1)          | default 'Y'::bpchar           | extended |              | 
+ osusername | character varying(15) | default ''::character varying | extended |              | 
+ majorcode  | smallint              |                               | plain    |              | 
+Indexes:
+    "students_pkey" PRIMARY KEY, btree (sid)
+    "idx_students_firstname" btree (firstname)
+    "idx_students_lastname" btree (lastname)
+Referenced by:
+    TABLE "grades" CONSTRAINT "fk_grades_students" FOREIGN KEY (sid) REFERENCES students(sid) ON UPDATE CASCADE ON DELETE CASCADE
+
