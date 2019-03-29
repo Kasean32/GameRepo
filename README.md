@@ -1,2 +1,2 @@
 # GameRepo
-Databases project motivated by gametes and gamerepo
+Databases project motivated by gamestop and gamefly
