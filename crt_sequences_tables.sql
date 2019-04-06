@@ -17,18 +17,8 @@
 
 --I made the phone 13 char restriction so I 
 --can include "-" and "()" in the nubmer
-CREATE TABLE IF NOT EXISTS Resume (
-	Personal_email VARCHAR(30) NOT NULL,
-	Education VARCHAR(30) NOT NULL,
-	Prev_Employ VARCHAR(20) NOT NULL,
-	Pe_email VARCHAR(30) NOT NULL,
-	Personal_phone VARCHAR(13) NOT NULL,
-	Pe_phone VARCHAR(13) NOT NULL
-);
-
-
 CREATE TABLE IF NOT EXISTS Employee (
-	eID INTEGER NOT NULL,
+	eID INTEGER PRIMARY KEY NOT NULL,
 	Fname VARCHAR(10) NOT NULL,
 	Lname VARCHAR(10) NOT NULL,
 	Street VARCHAR(20) NOT NULL,
@@ -37,8 +27,17 @@ CREATE TABLE IF NOT EXISTS Employee (
 	AreaCode INTEGER, 
 	Dob INTEGER NOT NULL,
 	Ssn INTEGER NOT NULL,
-	Salary INTEGER NOT NULL,
-	CONSTRAINT pk_empID PRIMARY KEY (eID)
+	Salary INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS Resume (
+	empID INTEGER NOT NULL,	
+	Personal_email VARCHAR(30) NOT NULL,
+	Education VARCHAR(30) NOT NULL,
+	Prev_Employ VARCHAR(20) NOT NULL,
+	Pe_email VARCHAR(30) NOT NULL,
+	Personal_phone VARCHAR(13) NOT NULL,
+	Pe_phone VARCHAR(13) NOT NULL,
+	FOREIGN KEY(empID) REFERENCES Employee(eID)
 );
 
 --City needs to be at leaset 20 char or bakersfield can't fit
@@ -55,12 +54,10 @@ CREATE TABLE IF NOT EXISTS Store (
 --when entering data be careful I redid several itemID's 
 --that matched and due to the constraint through an error
 CREATE TABLE IF NOT EXISTS Product (
-	itemID VARCHAR(6),
-	name VARCHAR NOT NULL,
-	Cond CHAR(1) DEFAULT 'U',
-	Platform CHAR(20) NOT NULL,
-	Price INTEGER DEFAULT 0,
-	CONSTRAINT pk_prodID PRIMARY KEY(itemID)
+	pid INTEGER NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	Price FLOAT,
+	PRIMARY KEY(pid)
 );
 
 CREATE TABLE IF NOT EXISTS Supplier (
@@ -87,11 +84,10 @@ CREATE TABLE IF NOT EXISTS Customer (
 );
 
 CREATE TABLE IF NOT EXISTS Orders (
-	ordID VARCHAR(10) NOT NULL,
-	List VARCHAR(50),
-	Cost INTEGER DEFAULT 0 NOT NULL,
-	Curr_Stat VARCHAR(20) DEFAULT 'In Store' NOT NULL, --deafault is in store as no one is allowed not to be member
-	CONSTRAINT pk_oID PRIMARY KEY (ordID)
+	oID INTEGER NOT NULL,
+	prod_id INTEGER,
+	FOREIGN KEY(prod_id) REFERENCES product (pid),
+	PRIMARY KEY (oID)
 );
 
 
