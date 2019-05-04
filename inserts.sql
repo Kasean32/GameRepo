@@ -137,7 +137,49 @@ VALUES
 
 INSERT INTO Supplier (Ship_num, dName, List, Quant, Cond, Cost)
 VALUES
-(0123456789, 'Games_R_Us', 'MadDawgs', 3, 'N', '45'), 
+-- Changed ship_num to less characters, changed Cost from string to int, added more shipments
+(1, 'Games_R_Us', 'Grand Theft Auto', 3, 'N', 45), 
+(2, 'Game_Hauler', 'Playstation 3', 6, 'U', 300),
+(1, 'Games_R_Us', 'DualShock', 7, 'P', 30),
+(3, 'Game_Shipers', 'Transformers', 9, 'U', 45),
+(2, 'Game_Hauler', 'Xbox One', 7, 'N', 300),
+(3, 'Game_Shipers', 'Switch', 8, 'U', 300),
+(3, 'Game_Shipers', 'Toy Story', 9, 'N', 45),
+(1, 'Games_R_Us', 'Wii', 6, 'P', 250),
+(3, 'Game_Shipers', 'Xbox One Controller', 7, 'P', 45),
+(1, 'Games_R_Us', 'Halo', 4, 'U', 45),
+(2, 'Game_Hauler', 'Wii Sports', 5, 'N', 45),
+(3, 'Game_Shipers', 'Wii', 3, 'P', 250),
+(2, 'Game_Hauler', 'Just Dance', 2, 'U', 45),
+
+(4, 'Games_R_Us', 'Doom', 3, 'N', 45), 
+(5, 'Game_Hauler', 'Playstation 4', 6, 'N', 250),
+(4, 'Games_R_Us', 'Monster Hunters', 7, 'N', 50),
+(6, 'Game_Shipers', 'Ghost Recon', 9, 'U', 45),
+(5, 'Game_Hauler', 'Xbox One', 7, 'N', 300),
+(6, 'Game_Shipers', 'Switch', 8, 'U', 300),
+(6, 'Game_Shipers', 'Battlefield', 9, 'N', 45),
+(4, 'Games_R_Us', 'Wii', 6, 'P', 250),
+(7, 'Game_Shipers', 'Red Dead Redemption', 7, 'P', 8),
+(8, 'Games_R_Us', 'Metro Exodus', 4, 'U', 60),
+(9, 'Game_Hauler', 'MLB the Show', 5, 'N', 45),
+(7, 'Game_Shipers', 'Wii U', 3, 'P', 250),
+(9, 'Game_Hauler', 'Outlast 2', 2, 'U', 45),
+
+(10, 'Games_R_Us', 'Minecraft', 3, 'N', 45), 
+(11, 'Game_Hauler', 'Playstation 4', 6, 'N', 350),
+(10, 'Games_R_Us', 'Xbox Accessories', 7, 'N', 50),
+(12, 'Game_Shipers', 'Nintendo Accessories', 9, 'U', 45),
+(11, 'Game_Hauler', 'Xbox 360', 7, 'N', 300),
+(12, 'Game_Shipers', 'Switch', 8, 'U', 300),
+(12, 'Game_Shipers', 'Switch Pro Controller', 9, 'N', 45),
+(10, 'Games_R_Us', 'Wii', 6, 'P', 250),
+(12, 'Game_Shipers', 'Persona 5', 7, 'P', 45),
+(10, 'Games_R_Us', 'MadDawgs', 4, 'U', 45),
+(11, 'Game_Hauler', 'DualShock', 5, 'N', 45),
+(12, 'Game_Shipers', 'Wii U', 3, 'P', 250),
+(11, 'Game_Hauler', 'Mario Party', 2, 'U', 45);
+/*(0123456789, 'Games_R_Us', 'MadDawgs', 3, 'N', '45'), 
 (0123489789, 'Game_Hauler', 'Playstation 3', 6, 'U', '300'),
 (0112456889, 'Games_R_Us', 'DualShock', 7, 'P', '30'),
 (0123478789, 'Game_Shipers', 'MadDawgs', 9, 'U', '45'),
@@ -150,7 +192,7 @@ VALUES
 (0186456789, 'Game_Hauler', 'DualShock', 5, 'N', '45'),
 (8952456789, 'Game_Shipers', 'Wii U', 3, 'P', '250'),
 (0124845789, 'Game_Hauler', 'MadDawgs', 2, 'U', '45');
-
+*/
 INSERT INTO Customer (memID, Fname, Lname, Street, Apt, City, AreaCode, Discount)
 VALUES
 (1, 'John', 'Doe', 'Main Street', 1, 'Bakersfield', 93308, .05),
