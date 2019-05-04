@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS Supplier (
 	Quant INTEGER DEFAULT 0,
 	Cond CHAR(1) DEFAULT 'N',
 	Cost INTEGER DEFAULT 0 NOT NULL,
-	CONSTRAINT pk_shipID PRIMARY KEY (Ship_num)
+	--CONSTRAINT pk_shipID PRIMARY KEY (Ship_num)
 );
 
 --changed to customer not member to match the UML documentation
