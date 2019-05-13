@@ -1,0 +1,20 @@
+                <h1>Parent Login</h1>
+                        <form method="post" action="login.php" name='f'> //major key: login.php is where the it is reading the strings so the code could know where it is getting it from.
+                            <div class="input-container">
+                                <input class="input-field" type="text" aria-describeby="passwordHelpBlock" placeholder="Email" name="email" minlength="5" maxlength="20" required>
+                                <small id="usernameHelpBlock" class="form-text text-muted">
+                                    Your username name must include "@" to signify it is an email. This is not lower and upper case sensitive.
+                            </div>
+
+                            <div class="input-container">
+                                <input class="input-field" type="text" placeholder="Password" aria-describedby="passwordHelpBlock" name="password">
+                                <small id="passwordHelpBlock" class="form-text text-muted">
+                                    must be a numberical ID
+                            </div>
+                            <footer class="major">
+                                <ul class="actions special">
+                                    <li><a class="button" id="submit" onclick='f.submit();'>Login</a></li> //f.submit is a onclick function that will allow program to verifiy the usernsme and password once the button is clicked.
+                                </ul>
+                                </form>
+
+                    </header>
