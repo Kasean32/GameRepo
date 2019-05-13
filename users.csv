@@ -1,0 +1,9 @@
+//this is were you will have all the information the login.php will check 
+//store your information as follows:
+//remember how i mentioned how the logic for login.php is used. 
+
+// data[0],  data[1], data[2]
+ 
+ username, password, blank
+
+//there is no header needed. no library calls either
